@@ -2,38 +2,81 @@ package array;
 
 import org.junit.Test;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class ArrayTest {
     @Test
-    public void ArrayDeclare() {
+    public void arrayTest() {
+//        数组的定义
         int[] arr;
-        String[] str;
         int arr1[];
-        String str1[];
-//      静态初始化,我们自己不进行长度的确定，我们直接用{}来设置数组内的个数，由系统来确定数组的长度
-//        int [] arr2 = new int[6]{1,2,3,4,5};
-//        Error:(13, 33) java: 同时使用维表达式和初始化创建数组是非法的
-        int [] arr2 = new int[]{1,2,3,4,5};
-        System.out.println(Arrays.toString(arr2));
+        String[] arr2;
+        String arr3[];
 
-
-//        动态初始化，先进行长度的确定，然后再依次赋值
-//        如果没有进行初始化，那么系统会进行初始化
-//        基本数据类型系统初始化为0.
-//       引用数据类型系统初始化为null
-//        boolean类型系统初始化为false
-        int [] arr0 = new int[5];
-        System.out.println(Arrays.toString(arr0));
-        System.out.println(arr2.toString());
-        boolean[] arr4 = new boolean[4];
-        String[] arr5 = new String[3];
-        Object[] arr6 =new Object[2];
+//        数组的初始化
+//        静态初始化，直接用大括号{}进行赋值，由系统来进行长度的判断
+//        使用new创建对象之后直接用大括号进行赋值
+        int[] arr4 = {1,2,3,4,5};
         System.out.println(Arrays.toString(arr4));
+        int[] arr5 = new int[]{1,2,3};
         System.out.println(Arrays.toString(arr5));
-        System.out.println(Arrays.toString(arr6));
+
+//        动态初始化，在初始化的时候指明长度，之后再进行赋值
+
+        String str[] = new String[3];
+        str[0] = "one";
+        str[1] = "two";
+        str[2] = "three";
+        System.out.println(Arrays.toString(str));
+
+//        如果不指明长度的话，系统会自动进行赋值
+
+        int[] arr_1 = new int[5];
+        String[] arr_2 = new String[5];
+        boolean[] arr_3 = new boolean[5];
+        Object[] arr_4 = new Object[5];
+        System.out.println(Arrays.toString(arr_1));
+        System.out.println(Arrays.toString(arr_2));
+        System.out.println(Arrays.toString(arr_3));
+        System.out.println(Arrays.toString(arr_4));
+//        八种基本数据类型是 0
+//        引用类型是null
+//        boolean类型是false
+    }
+
+    //    示例：分别使用上述三种方式遍历数组 `Integer[] arr = {1, 2, 3, 4, 5};`
+    @Test
+    public void arrayBianLi() {
+        Integer[] arr = {1, 3, 6, 7, 2};
+        System.out.println("1. for循环使用数组下标");
+        for(int index = 0;index<arr.length;index++){
+//            System.out.println("下标是：" + index +  "  值是：" + arr[index]);
+            System.out.println(String.format("下标是：%d  值是：%d",index,arr[index]));
+        }
+
+        System.out.println("2. for each循环");
+        int index = 0;
+        for(int val:arr){
+//            System.out.println("第"+index+"位数值为"+val);
+            System.out.println(String.format("第%d次数值为%d",index,val));
+            index++;
+        }
+        System.out.println("3. Java 8新增的 Lambda 表达式");
+        Arrays.asList(arr).forEach(val->{
+            System.out.println("值是："+val);
+            if(val%2==0) System.out.println("    是偶数");
+            else System.out.println("    是奇数");
+        });
 
 
+    }
+
+    @Test
+    public void testArraysAslist() {
+        String[] str= {"hello","world","welcom"};
+        System.out.println(Arrays.asList(str));
+        System.out.println(Arrays.toString(str));
 
     }
 }
