@@ -106,4 +106,29 @@ public class ArrayTest {
         System.out.println(Arrays.toString(arr1));
 
     }
+
+    @Test
+    public void testFill() {
+//        定义一个大小为 10 的 int 数组，并将数组全部初始化为指定的值 5，打印数组；
+//        然后将数组后 3 为赋值为 3，再次打印数组。
+        int[] arr1 = new int[]{5,5,5,5,5,5,5,5,5,5};
+        int[] arr2 = new int[10];
+        for(int index = 0;index<10;index++){
+            arr2[index]=5;
+        }
+        System.out.println(Arrays.toString(arr1));
+        System.out.println(Arrays.toString(arr2));
+//        下标的最大值是长度-1
+        for(int index=arr1.length-1;index>arr1.length-4;index--){
+            arr1[index]=3;
+        }
+        System.out.println(Arrays.toString(arr1));
+        String[] arr11 = new String[5];
+        Arrays.fill(arr11,"5");
+        System.out.println(Arrays.toString(arr11));
+        Arrays.fill(arr11,arr11.length-3,arr11.length,"9");
+        System.out.println(Arrays.toString(arr11));
+
+
+    }
 }
