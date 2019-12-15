@@ -8,6 +8,7 @@ import java.util.Random;
 
 public class ArrayTest {
     @Test
+//    数组的定义和初始化
     public void arrayTest() {
 //        数组的定义
         int[] arr;
@@ -47,6 +48,7 @@ public class ArrayTest {
     }
 
     @Test
+//    数组的遍历
     public void arrayBianLi() {
         //    示例：分别使用上述三种方式遍历数组 `Integer[] arr = {1, 2, 3, 4, 5};`
 
@@ -75,6 +77,7 @@ public class ArrayTest {
     }
 
     @Test
+//    将引用数据类型地址转化为集合
     public void testArraysAslist() {
         String[] str= {"hello","world","welcom"};
         System.out.println(Arrays.asList(str));
@@ -83,6 +86,7 @@ public class ArrayTest {
     }
 
     @Test
+//    数组的拷贝
     public void testCopy() {
         Integer[] arr1 = {1,2,3,4,5,6,7};
         Integer[] arr2 = {8,9,10};
@@ -109,6 +113,7 @@ public class ArrayTest {
     }
 
     @Test
+//    数组的填充
     public void testFill() {
 //        定义一个大小为 10 的 int 数组，并将数组全部初始化为指定的值 5，打印数组；
 //        然后将数组后 3 为赋值为 3，再次打印数组。
@@ -134,6 +139,7 @@ public class ArrayTest {
     }
 
     @Test
+//    数组的排序
     public void testSort() {
 //        示例：定义一个大小为 100 的 int 数组，
 //        随机给每一位赋值一个 `0 ~ 100` 之间的数值，
