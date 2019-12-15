@@ -45,9 +45,10 @@ public class ArrayTest {
 //        boolean类型是false
     }
 
-    //    示例：分别使用上述三种方式遍历数组 `Integer[] arr = {1, 2, 3, 4, 5};`
     @Test
     public void arrayBianLi() {
+        //    示例：分别使用上述三种方式遍历数组 `Integer[] arr = {1, 2, 3, 4, 5};`
+
         Integer[] arr = {1, 3, 6, 7, 2};
         System.out.println("1. for循环使用数组下标");
         for(int index = 0;index<arr.length;index++){
@@ -77,6 +78,32 @@ public class ArrayTest {
         String[] str= {"hello","world","welcom"};
         System.out.println(Arrays.asList(str));
         System.out.println(Arrays.toString(str));
+
+    }
+
+    @Test
+    public void testCopy() {
+        Integer[] arr1 = {1,2,3,4,5,6,7};
+        Integer[] arr2 = {8,9,10};
+        // 拷贝数组 arr1 的前 3 个元素,生成一个新的数组
+        Integer[] arr3 = new Integer[3];
+        arr3[0] = arr1[0];
+        arr3[1] = arr1[1];
+        arr3[2] = arr1[2];
+        System.out.println(Arrays.toString(arr3));
+        Integer[] arr11 = Arrays.copyOf(arr1,3);
+        System.out.println(Arrays.toString(arr11));
+
+
+        // 拷贝数组 arr1 的第 1 位到第 3 位的元素（不包括第 3 位）
+        Integer[] arr22 = Arrays.copyOfRange(arr1,arr1.length-4,arr1.length);
+        System.out.println(Arrays.toString(arr22));
+        arr22 = Arrays.copyOfRange(arr1,0,arr1.length);
+        System.out.println(Arrays.toString(arr22));
+        // 拷贝数组 arr2 的后 3 位到 arr1 到后 3 位,类似于替换，把目标数组的第几位开始替换到另一个数组的第几位，长度是**
+//        把arr2的第0位开始，长度是2，替换到（拷贝到）arr1的第2位开始，长度是2
+        System.arraycopy(arr2,0,arr1,2,3);
+        System.out.println(Arrays.toString(arr1));
 
     }
 }
