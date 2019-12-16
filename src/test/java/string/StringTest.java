@@ -168,4 +168,14 @@ public class StringTest {
             i = at-1;
         }while(true);
     }
+
+    @Test
+    public void 字符串的查找并替换() {
+//        使用replace（）方法和replaceAll（）方法
+//        但是后边的方法是使用正则表达式的
+        String str ="hello,world";
+        System.out.println(str.replace('o','O'));
+        System.out.println(str.replaceAll("o","O"));
+    }
+
 }
