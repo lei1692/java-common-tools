@@ -67,4 +67,19 @@ public class StringTest {
         String str3 = str.substring(4,8);
         System.out.println(str3);
     }
+
+    @Test
+    public void 字符串的拼接Merge() {
+        //字符串的拼接可以用+和+=两种，但是用的时候要注意是在堆中还是在常量池中
+
+        String str = "hello ";
+        String str1 = "world";
+        String str11 = "hello " + "world";
+        String str2 = "hello world";
+        System.out.println(str2 == str11);
+
+        str += "world";
+        System.out.println("str == str2: "+ (str.intern() == str2));
+
+    }
 }
