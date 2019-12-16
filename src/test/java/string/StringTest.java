@@ -178,4 +178,23 @@ public class StringTest {
         System.out.println(str.replaceAll("o","O"));
     }
 
+    @Test
+    public void 字符串的去除空格和大小写的转换() {
+//        使用trim（）方法，可以去掉前后的空格，但是不能去掉中间的空格使用replace（）方法，
+//        直接可以吧所有的空格替换掉
+        String str = "he llo ,w o r l a ";
+        String str1 = "   hello,world   ";
+
+        System.out.println(str.replace(" ",""));
+        System.out.println(str1.replace(" ",""));
+        System.out.println(str1.trim());
+
+//        大小写的转换使用
+
+        System.out.println(str1.trim().toUpperCase());
+        String str3 = "HOLLO";
+        System.out.println(str3.toLowerCase());
+
+
+    }
 }
