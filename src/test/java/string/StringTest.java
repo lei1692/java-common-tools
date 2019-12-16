@@ -131,4 +131,41 @@ public class StringTest {
         System.out.println(str.contains("loo"));
     }
 
+    @Test
+    public void 字符串的查找() {
+//        假如说只有一个参数，就是从头开始找这个字符串，有就返回第一个出现的下标，没有返回-1
+//        可以利用循环来查找每个字符串的位置
+//        需要注意的就是，如果开始查找的下标大于或者小于字符串的长度是可以的
+        String str = "heollo worldo";
+        System.out.println(str.indexOf(2,3));
+        System.out.println(str.indexOf("o",3));
+        System.out.println(str.indexOf("llo"));
+
+//        先从头开始查找，找到了之后，从这个下标的后一位开始查找，
+//        一直到查找的结果是-1就是没有查找到
+        int i=0;
+        for(int index = 0;index<str.length();index++){
+            int at = str.indexOf("o",i);
+            if (at==-1) break;
+            System.out.println("字符串o出现的位置"+str.indexOf("o",i));
+            i=at+1;
+        }
+
+        i=-2;
+        do{
+            int at = str.indexOf("o",i);
+            if(at==-1) break;
+            System.out.println(String.format("o出现的位置是%d",str.indexOf("o",i)));
+            i=at+1;
+        }while(true);
+
+//        从后往前找也是一样的，只不过多了一个last
+        i=str.length();
+        do{
+            int at = str.lastIndexOf("o",i);
+            if(at==-1) break;
+            System.out.println(String.format("第 %d 为出现的是小写字母o",str.lastIndexOf("o",i-1)));
+            i = at-1;
+        }while(true);
+    }
 }
