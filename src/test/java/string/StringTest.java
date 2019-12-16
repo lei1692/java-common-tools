@@ -94,4 +94,17 @@ public class StringTest {
         String str2 = String.format("大写字母L是：%c,\nL的ASCLL码值是：%d,\n输出一个数字是：%d，\n输出一个小数是%.2f\n",'L',(int)'L',4,1.23);
         System.out.println(str2);
     }
+
+    @Test
+    public void 字符串的匹配() {
+//        判断两个字符串是否相等使用equals（）方法
+//        如果不想区分大小写对的话使用equalsIgnoreCase（）方法
+
+        String str = "hello";
+        String str1 = "hello";
+        String str2 = "HELLO";
+        System.out.println(str.equals(str1));
+        System.out.println(str.equals(str2));
+        System.out.println(str.equalsIgnoreCase(str2));
+    }
 }
