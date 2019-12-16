@@ -194,7 +194,15 @@ public class StringTest {
         System.out.println(str1.trim().toUpperCase());
         String str3 = "HOLLO";
         System.out.println(str3.toLowerCase());
+    }
 
-
+    @Test
+    public void 字符串中的空串和null串() {
+//        空串就是一个长度为0，内容为空的字符串
+        String str = "";
+        System.out.println(String.format("%s是空串",str));
+//        没有进行初始化，没有指向任何对象
+        String str1 = null;
+        System.out.println(String.format("%s是null串",str1));
     }
 }
