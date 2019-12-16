@@ -205,4 +205,32 @@ public class StringTest {
         String str1 = null;
         System.out.println(String.format("%s是null串",str1));
     }
+
+    @Test
+    public void StringBuffer和StringBuer() {
+//        使用这两个进行创建新对象字符串的时候默认的内层数组长度是16，
+//        如果，进行赋值的长度大于16的话，就会抛弃刚创建的对象，
+//        重新创建一个新数组，然后把原来数组里的内容拷贝到新数组中
+//        这样会增加内存的开销
+//        StringBuilder中可以指定容量，如果可预估容量的话，可指定容量的大小，
+//        这样可以避免多次扩容，减小开销
+        StringBuilder str = new StringBuilder(17);
+        System.out.println(str.length());
+    }
+
+    @Test
+    public void 使用builder和buffer进行拼接() {
+//        使用StringBuilder进行创建，之后可以通过append来进行添加。
+//        可以通过length（）来进行长度的设定
+        StringBuilder str = new StringBuilder();
+        str = str.append("hello");
+        System.out.println(str);
+        str = str.append(" world.");
+        System.out.println(str.toString());
+        System.out.println(str.length());
+        str.setLength(9);
+        System.out.println(str.toString());
+        str.setLength(30);
+        System.out.println(str.toString());
+    }
 }
