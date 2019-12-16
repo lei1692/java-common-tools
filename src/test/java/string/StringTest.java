@@ -82,4 +82,16 @@ public class StringTest {
         System.out.println("str == str2: "+ (str.intern() == str2));
 
     }
+
+    @Test
+    public void 字符串的格式化操作() {
+//        不适用格式化的话，想要输出不同的数据类型，就需要很长的相加，不简洁
+//        强制转化使用一个（）就可以了，括号里写需要转换的类型
+        String str = "大写字母L:"+" L"+ " " + " \n";
+        System.out.println(str);
+        String str1 = String.format("大写字母L：%c \n",'L');
+        System.out.println(str1);
+        String str2 = String.format("大写字母L是：%c,\nL的ASCLL码值是：%d,\n输出一个数字是：%d，\n输出一个小数是%.2f\n",'L',(int)'L',4,1.23);
+        System.out.println(str2);
+    }
 }
