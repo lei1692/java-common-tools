@@ -1,8 +1,8 @@
-package testAll;
+package string;
 
 import org.junit.Test;
 
-public class MethodTest {
+public class StringTest {
     @Test
     public void 字符串堆和常量池的测试() {
 //        两个都是在常量池中，两个变量指向常量池中的同一个字符串
@@ -39,5 +39,17 @@ public class MethodTest {
 
 
 
+    }
+
+    @Test
+    public void 字符串长度的测试() {
+//        使用length（）方法的结果是String类底层的字符数组的长度
+//        但是有的时候一个字符长度不表示一个字符，有可能是两个或者多个字符长度来表示
+//        一个字符，所以可以有
+        String str = "ahello,\uD835\uDD5D\uD835\uDD60\uD835\uDD60\uD835\uDD5C";
+        System.out.println(str);
+        System.out.println("字符串的数组的长度： "+str.length());
+        System.out.println("代码点数（表示实际的字符串的长度）："+str.codePointCount(0,str.length()));
+        System.out.println("字符串里的字符数组在某个下标中字符的ascll码值："+str.codePointAt(0));
     }
 }
