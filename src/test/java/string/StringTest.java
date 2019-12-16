@@ -52,4 +52,19 @@ public class StringTest {
         System.out.println("代码点数（表示实际的字符串的长度）："+str.codePointCount(0,str.length()));
         System.out.println("字符串里的字符数组在某个下标中字符的ascll码值："+str.codePointAt(0));
     }
+
+    @Test
+    public void 字符串子串substring方法截取() {
+//        substring()方法有两种用法
+//        1、只有一个参数，是从这个下标开始，一直取到最后一位
+//        2、有两个参数,是下标开始，和下标结束，不包括下标结束的字符
+//        也可以理解为，从开始下标开始，取长度为结束下标-开始下标
+        String str = "hello,world";
+        String str1 = str.substring(4);
+        System.out.println(str1);
+        String str2 = str.substring(4,str.length());
+        System.out.println(str2);
+        String str3 = str.substring(4,8);
+        System.out.println(str3);
+    }
 }
