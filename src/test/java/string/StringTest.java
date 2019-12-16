@@ -107,4 +107,28 @@ public class StringTest {
         System.out.println(str.equals(str2));
         System.out.println(str.equalsIgnoreCase(str2));
     }
+
+    @Test
+    public void 字符串前缀后缀相等和包含判断() {
+//        使用startWith（）和endWith（）方法
+//        就是判断一个字符串是否已特定的字符串或字符开头或者结尾
+//        有一个需要注意的是字符串的开头和结尾如果的“”的话也是对的
+//        包含需要使用contain（）方法
+        String str = "hello";
+
+        System.out.println(str.startsWith("he"));
+        System.out.println(str.startsWith("h"));
+        System.out.println(str.startsWith(" "));
+        System.out.println(str.startsWith(""));
+
+
+        System.out.println(str.endsWith("o"));
+        System.out.println(str.endsWith("lo"));
+        System.out.println(str.endsWith("ol"));
+        System.out.println(str.endsWith(""));
+
+        System.out.println(str.contains("llo"));
+        System.out.println(str.contains("loo"));
+    }
+
 }
