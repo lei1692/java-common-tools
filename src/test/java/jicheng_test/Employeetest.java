@@ -79,7 +79,24 @@ public class Employeetest {
 
         Manager mag = new Manager("经理1", new Date(),150,50);
         mag.printInfo();
+    }
 
-
+    @Test
+    public void 多态() {
+//        一个对象变量可以指向多个对象，但是有不会搞混各个对象之间方法的继承和调用
+//        就是继承
+//        总经理室继承了三个类，多以调用了三个类中的构造函数
+//        虽然说都是使用了 ma.printInfo();但是因为多态，有动态绑定，所以不会执行错误
+//        在最后一个printfinfo中调用的是父类中的printinfo，但是因为多态，里边的getname方法看的是
+//        Mastermanager类中重写的getname方法。所以返回值会有【】
+        Manager mag = new Manager("经理1", new Date(),150,50);
+        Employee em2 = new Employee("员工2",new Date(),100);
+        MasterManager mma = new MasterManager("总经理",new Date(),200,50);
+        Employee ma = mag;       //可以吧实例化对象赋值给,一个对象变量，这个变量指向的对象是可以变的。
+        ma.printInfo();
+        ma = em2;
+        ma.printInfo();
+        ma = mma;
+        ma.printInfo();
     }
 }
