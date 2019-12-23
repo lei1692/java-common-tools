@@ -44,4 +44,21 @@ public class Employeetest {
         mag2.setSalary(200);;
         mag2.printInfo();
     }
+
+    @Test
+    public void 子类父类的构造器调用顺序2() {
+//        创建父类的时候，调用有参构造，在有参构造里边直接对传入的参数进行赋值，不用使用setter了
+        Employee em2 = new Employee("员工2",new Date(),100);
+        em2.printInfo();
+
+        System.out.println("=============================================");
+
+//        使用有参构造函数来创建manager，但是在创建子类之前没有调用父类的有参构造，
+//        那么会自动调用父类的无参构造再对其他的属性进行赋值
+        Manager mag2 = new Manager(50);
+        mag2.setName("经理2");
+        mag2.setSalary(200);
+        mag2.setHireDay(new Date());
+        mag2.printInfo();
+    }
 }

@@ -3,7 +3,13 @@ package jicheng_test;
 //自己定义属性之后，自己提供方法使外部能够进行修改
 public class Manager extends Employee {
     private Integer bonus;
-
+    public Manager(){
+        System.out.println("调用了Manager的午餐构造函数");
+    }
+    public Manager(Integer bonus){
+        System.out.println("调用了Manager的有餐构造函数");
+        this.bonus = bonus;
+    }
     public Integer getBonus() {
         return bonus;
     }
