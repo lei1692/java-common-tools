@@ -1,4 +1,8 @@
 package jicheng_test;
+
+import javax.xml.crypto.Data;
+import java.util.Date;
+
 //子类继承父类，有自己独有的方法和属性，可以重写父类的方法，拥有父类所有非private和未重写的方法
 //自己定义属性之后，自己提供方法使外部能够进行修改
 public class Manager extends Employee {
@@ -9,6 +13,13 @@ public class Manager extends Employee {
     public Manager(Integer bonus){
         System.out.println("调用了Manager的有餐构造函数");
         this.bonus = bonus;
+    }
+    public Manager(String name, Date hireDay, Integer salary,Integer bonus){
+        System.out.println("调用了Manager的有参构造函数");
+        setSalary(salary);
+        setName(name);
+        setHireDay(hireDay);
+        setBonus(bonus);
     }
     public Integer getBonus() {
         return bonus;

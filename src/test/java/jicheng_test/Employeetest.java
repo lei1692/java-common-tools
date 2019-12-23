@@ -2,6 +2,7 @@ package jicheng_test;
 
 import org.junit.Test;
 
+import javax.xml.crypto.Data;
 import java.util.Date;
 //在测试类中，创建员工和经理的对象，并使用setter方法进行赋值，最后调用类中的方法进行
 //虽然复写了父类中的方法，但是父类中的方法还是存在的，想要使用可以使用supper关键字
@@ -60,5 +61,15 @@ public class Employeetest {
         mag2.setSalary(200);
         mag2.setHireDay(new Date());
         mag2.printInfo();
+    }
+
+    @Test
+    public void 子类父类的构造器调用顺序3() {
+//        在子类的有参构造函数中进行属性的赋值，使用setter方法，把传入的属性赋值给自己,因为子类中是没有属性的，所以
+//        要使用setter把属性传给父类中的属性
+        Manager mag = new Manager("经理1", new Date(),150,50);
+        mag.printInfo();
+
+
     }
 }
