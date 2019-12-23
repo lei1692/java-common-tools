@@ -69,6 +69,16 @@ public class Employeetest {
 //        要使用setter把属性传给父类中的属性
         Manager mag = new Manager("经理1", new Date(),150,50);
         mag.printInfo();
+    }
+
+    @Test
+    public void 子类父类的构造器调用顺序4() {
+//        可以在子类构造器中传入参数中之后不使用setter方法，直接调用父类的有参构造方法来进行赋值
+//        但是要注意自身的属性（域）是需要在子类构造器中赋值的
+//        还有就是使用父类的有参构造函数的时候要写在第一行
+
+        Manager mag = new Manager("经理1", new Date(),150,50);
+        mag.printInfo();
 
 
     }

@@ -15,11 +15,12 @@ public class Manager extends Employee {
         this.bonus = bonus;
     }
     public Manager(String name, Date hireDay, Integer salary,Integer bonus){
+        super(name,hireDay,salary);
         System.out.println("调用了Manager的有参构造函数");
-        setSalary(salary);
-        setName(name);
-        setHireDay(hireDay);
-        setBonus(bonus);
+//        setSalary(salary);
+//        setName(name);
+//        setHireDay(hireDay);
+        this.bonus = bonus;
     }
     public Integer getBonus() {
         return bonus;
