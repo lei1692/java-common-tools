@@ -7,6 +7,16 @@ public class Employee {
     private String name;
     private Date hireDay;
     private Integer salary;
+    public Employee(){
+        System.out.println("调用了父类的无参构造");
+    }
+    public Employee(String name,Date hireDay,Integer salary){
+        System.out.println("调用了父类的有参构造");
+        this.salary = salary;
+        this.name = name;
+        this.hireDay = hireDay;
+
+    }
 
     public String getName() {
         return name;
