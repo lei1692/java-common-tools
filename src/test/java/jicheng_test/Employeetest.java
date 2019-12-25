@@ -96,7 +96,7 @@ public class Employeetest {
         Employee ma = em2;       //可以吧实例化对象赋值给,一个对象变量，这个变量指向的对象是可以变的。
         ma.printInfo();
 //        Manager mag1 = (Manager)ma;
-        System.out.println(mag1.getBonus());
+//        System.out.println(mag1.getBonus());
         ma = em2;
         ma.printInfo();
         ma = mma;
