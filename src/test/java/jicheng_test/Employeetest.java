@@ -135,4 +135,22 @@ public class Employeetest {
         System.out.println(em1 instanceof MasterManager);
 
     }
+
+    @Test
+    public void 超类Object测试() {
+        Manager mag = new Manager();
+        System.out.println(mag.getClass());
+        System.out.println(mag.getName());
+        System.out.println(mag.getClass().getName());
+        System.out.println(mag.getClass().getSimpleName());
+        System.out.println(mag.hashCode());
+        System.out.println(mag.toString());
+
+        Employee emp = new Manager();
+        System.out.println(emp.getClass());
+        System.out.println(emp.getClass().getName());
+        System.out.println(emp.getClass().getSimpleName());
+        System.out.println(emp.hashCode());
+        System.out.println(emp.toString());
+    }
 }
