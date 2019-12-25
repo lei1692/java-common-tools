@@ -92,11 +92,47 @@ public class Employeetest {
         Manager mag = new Manager("经理1", new Date(),150,50);
         Employee em2 = new Employee("员工2",new Date(),100);
         MasterManager mma = new MasterManager("总经理",new Date(),200,50);
-        Employee ma = mag;       //可以吧实例化对象赋值给,一个对象变量，这个变量指向的对象是可以变的。
+        System.out.println(mag.getBonus());
+        Employee ma = em2;       //可以吧实例化对象赋值给,一个对象变量，这个变量指向的对象是可以变的。
         ma.printInfo();
+        Manager mag1 = (Manager)ma;
+        System.out.println(mag1.getBonus());
         ma = em2;
         ma.printInfo();
         ma = mma;
         ma.printInfo();
+    }
+
+    @Test
+    public void 强制类型转换测试方法() {
+
+        Object obj = new Date();
+        if(obj instanceof Manager){
+            Manager mag = new Manager();
+        }else {
+            System.out.println("Object不是一个manager");
+        }
+        Employee em1 = new Employee();
+        Manager mag1 = new Manager();
+        MasterManager mas1 = new MasterManager();
+        Employee test = em1;
+        System.out.println(test instanceof Employee);
+        System.out.println(test instanceof Manager);
+        System.out.println(test instanceof MasterManager);
+
+        Employee test1 = mag1;
+        System.out.println(test1 instanceof Employee);
+        System.out.println(test1 instanceof Manager);
+        System.out.println(test1 instanceof MasterManager);
+
+        Employee test2 = mas1;
+        System.out.println(test2 instanceof Employee);
+        System.out.println(test2 instanceof Manager);
+        System.out.println(test2 instanceof MasterManager);
+
+        System.out.println(em1 instanceof Employee);
+        System.out.println(em1 instanceof Manager);
+        System.out.println(em1 instanceof MasterManager);
+
     }
 }

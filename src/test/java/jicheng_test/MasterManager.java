@@ -3,6 +3,9 @@ package jicheng_test;
 import java.util.Date;
 
 public class MasterManager extends Manager {
+    public MasterManager(){}
+
+
     @Override
     public String getName() {
         return "[" + super.getName() + "]" ;
