@@ -1,4 +1,4 @@
-package jicheng_test;
+package jicheng_test.jicheng;
 
 import java.util.Date;
 //在父类中定义一些方法和域，定义一些私有的方法，提供setter和getter方法使外部能够修改

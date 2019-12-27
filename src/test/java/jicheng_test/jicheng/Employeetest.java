@@ -1,8 +1,7 @@
-package jicheng_test;
+package jicheng_test.jicheng;
 
 import org.junit.Test;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 //在测试类中，创建员工和经理的对象，并使用setter方法进行赋值，最后调用类中的方法进行
 //虽然复写了父类中的方法，但是父类中的方法还是存在的，想要使用可以使用supper关键字

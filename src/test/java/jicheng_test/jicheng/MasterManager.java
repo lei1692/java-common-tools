@@ -1,4 +1,4 @@
-package jicheng_test;
+package jicheng_test.jicheng;
 
 import java.util.Date;
 

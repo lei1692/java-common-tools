@@ -1,6 +1,5 @@
-package jicheng_test;
+package jicheng_test.jicheng;
 
-import javax.xml.crypto.Data;
 import java.util.Date;
 
 //子类继承父类，有自己独有的方法和属性，可以重写父类的方法，拥有父类所有非private和未重写的方法
